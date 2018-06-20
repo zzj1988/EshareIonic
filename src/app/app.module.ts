@@ -10,12 +10,19 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import {BasicPage} from '../pages/action-sheets/pages';
+import {ShareDocPage} from '../pages/share-doc/share-doc';
+import {H5payPage} from '../pages/h5pay/h5pay';
+
 @NgModule({
   declarations: [
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    BasicPage,
+    ShareDocPage,
+    H5payPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    BasicPage,
+    ShareDocPage,
+    H5payPage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,61 @@
+<!--
+  Generated template for the H5payPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>h5pay</ion-title>
+  </ion-navbar>
+
+  <script src="/www/pingpp_ui.js">
+
+    pingpp_ui.init({
+      // 页面上需要展示的渠道，数组，数组顺序即页面展示出的渠道的顺序
+      // upmp_wap 渠道在微信内部无法使用，若用户未安装银联手机支付控件，则无法调起支付
+      channel:['alipay_wap','wx_pub','upacp_wap','yeepay_wap','jdpay_wap','bfb_wap']
+    },function(channel){
+      // 用户选择的支付渠道
+      console.log(channel);
+    });
+    pingpp_ui.createPayment(charge, function(res, err) {
+      if (result == "success") {
+        // 只有微信公众号 (wx_pub)、QQ 公众号 (qpay_pub)
+        //支付成功的结果会在这里返回，其他的支付结果都会跳转到 extra 中对应的 URL
+      } else if (result == "fail") {
+        // charge 不正确或者微信公众号/QQ 公众号支付失败时会在此处返回
+      } else if (result == "cancel") {
+        // 微信公众号/QQ 公众号支付取消支付
+      }
+    });
+    pingpp_ui.success(function(res){
+      if(!res.status){
+        alert(res.msg);
+      }
+    },function(){
+      window.location.href="http://pingxx.com";   //示例
+    });
+
+
+
+    function getPPObject() {
+      $.get("http://www.baidu.com",function(data,status){
+        alert("数据: " + data + "\n状态: " + status);
+      });
+    }
+
+
+  </script>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button onclick="getPPObject()">
+    Paytest
+  </button>
+
+</ion-content>

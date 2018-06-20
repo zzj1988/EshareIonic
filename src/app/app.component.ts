@@ -8,6 +8,9 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+//BasicPage是一个在其他文件实现的类，在此处引用
+import {BasicPage} from "../pages/action-sheets/pages"
+
 
 @Component({
   templateUrl: 'app.html'
@@ -30,7 +33,8 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'My First List', component: ListPage },
+      { title:'ActionSheet Page',component:BasicPage}
     ];
   }
 
@@ -43,10 +47,4 @@ export class MyApp {
     });
   }
 
-  openPage(page) {
-    // close the menu when clicking a link from the menu
-    this.menu.close();
-    // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
-  }
 }

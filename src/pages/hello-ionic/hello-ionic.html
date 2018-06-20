@@ -1,8 +1,5 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>Hello Ionic</ion-title>
   </ion-navbar>
 </ion-header>
@@ -12,14 +9,19 @@
 
   <h3>Welcome to your first Ionic app!</h3>
 
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
-
+  <button ion-button block (click)="eshareGetList()">
+    showEshareList
+  </button>
+  <button ion-button block (click)="eshareFileTrans()">
+    EshareFileTrans
+  </button>
+  <button ion-button block (click)="startMirror()">
+    startMirror
+  </button>
+  <button ion-button block (click)="showShareDocument()">
+     showShareDocument
+  </button>
+  <button ion-button block (click)="showH5WechatPay()">
+    showH5Pay
+  </button>
 </ion-content>
